@@ -2,6 +2,7 @@ package Controller;
 
 import Controller.ControllerNames;
 import Controller.SceneCtrlNamePair;
+import com.sun.javafx.css.StyleManager;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.fxml.FXMLLoader;
@@ -14,6 +15,10 @@ public class Main extends Application {
     private static Stage primaryStageHolder = null;
     @Override
     public void start(Stage primaryStage) throws Exception {
+
+        //StyleManager.getInstance().addUserAgentStylesheet("../View/Style.css");
+        Application.setUserAgentStylesheet(getClass().getResource("../View/Style.css").toExternalForm());
+
         primaryStageHolder = primaryStage;
 
         FXMLLoader overViewPaneLoader = new FXMLLoader(getClass().getResource("../View/OverView.fxml"));
